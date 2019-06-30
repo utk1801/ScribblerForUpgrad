@@ -1,0 +1,89 @@
+/* Set a style for all elements inside the header i.e. Sign Up button, Sign In button, 
+the title "ScriBBler" & the sub-heading below "ScriBBLer" */
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .logo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .heading{
+    font-family: 'Satisfy';
+    font-size: 30px;
+    color: blue;
+    margin: 0;
+  }
+
+  .sub-heading{
+    font-family: 'Satisfy', cursive;
+    font-size: 10;
+    color: black;
+    margin: 0;
+  }
+
+  .header-buttons-container{
+    padding: 10px;
+  }
+
+  .blue-button{
+    background-color: blue;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 5px;
+    padding-left:5px;
+    color:white;
+    font-family: 'Josefin Sans';
+    font-size: 14px;
+  }
+
+
+/* sign modals */
+
+ .sign-modal-content{
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0px 20px 10px 20px;
+  border: 1px solid #999;
+  width: 20%;
+}
+
+.sign-close-btn {
+  display: flex;
+  align-self: flex-end;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.sign-btn {
+  background-color: green;
+  padding: 10px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-family: Abel;
+}
+
+.signup{
+  color: blue;
+  font-weight: bolder;
+  margin-left: 10px;
+  cursor: pointer;
+  font-family: Abel;
+}
+
+
+.modal-bottom-text{
+   font-family: Abel;
+   text-align: center;
+   font-weight: bold;
+}
