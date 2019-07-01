@@ -27,7 +27,8 @@
     background-color: #E8E8E8;
     color: #000000;
     border-radius: 0 15px 15px 0;
-    padding: 0 20px;      
+    padding: 0 20px;    
+    height: auto;
 }
 
 .post-title{
@@ -35,7 +36,7 @@
     font-weight: bold;
     color: #2b312b;
     font-size: 25px;
-    height: 25px;
+    height: auto;
 }
 
 .post-more {
