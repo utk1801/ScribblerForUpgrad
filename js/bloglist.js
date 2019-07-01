@@ -26,7 +26,7 @@ var trashFunctions = function(numberOfPosts) {
 trashFunctions(5)
 
 function navigateToPost() {
-    location.href = "posts.html";
+    location.href = "post.html";
 }
 
 function showCreatePostModal(){

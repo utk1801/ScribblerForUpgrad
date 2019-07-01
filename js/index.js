@@ -9,5 +9,5 @@ function showCreatePostModal(){
   }
   
   function openBlogList(){
-    location.href = "../html/bloglists.html"
+    location.href = "../html/bloglist.html"
   }
