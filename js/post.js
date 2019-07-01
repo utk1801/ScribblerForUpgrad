@@ -49,62 +49,83 @@ function incrementCounter(){
 
 }
 
-function toggleEditSave(){
-  var toggleSave = '<button class="postEdit">Save '+
-  '<i style="font-size: 14px;font-weight: bolder;" '+
-  'class="fa fa-save" aria-hidden="true"></i>'+
-  '</button>';
-  var toggleEdit = '<button class="postEdit">Edit '+
-  '<i style="font-size: 14px;font-weight: bolder;" '+
-  'class="fa fa-pencil-square-o" aria-hidden="true"></i>'+
-  '</button>';
+// function toggleEditSave(){
+//   var toggleSave = '<button class="postEdit">Save '+
+//   '<i style="font-size: 14px;font-weight: bolder;" '+
+//   'class="fa fa-save" aria-hidden="true"></i>'+
+//   '</button>';
+//   var toggleEdit = '<button class="postEdit">Edit '+
+//   '<i style="font-size: 14px;font-weight: bolder;" '+
+//   'class="fa fa-pencil-square-o" aria-hidden="true"></i>'+
+//   '</button>';
 
-  var edtSaveBtn = document.getElementById('editPost');
-  var toDo = (edtSaveBtn.innerText).toString().trim();
-  console.log(toDo);
-  console.log(toDo.localeCompare('Edit'));
-  if(toDo.localeCompare('Edit')===0){
-    console.log("Currently Edit");
-    var bSave = document.getElementById('editPost');
-    bSave.innerHTML = toggleSave;
-    enableEditableText();
+//   var edtSaveBtn = document.getElementById('editPost');
+//   var toDo = (edtSaveBtn.innerText).toString().trim();
+//   console.log(toDo);
+//   console.log(toDo.localeCompare('Edit'));
+//   if(toDo.localeCompare('Edit')===0){
+//     console.log("Currently Edit");
+//     var bSave = document.getElementById('editPost');
+//     bSave.innerHTML = toggleSave;
+//     enableEditableText();
 
-  }
-  else{
-    console.log("Currently Save");
-    var bEdit = document.getElementById('editPost');
-    bEdit.innerHTML = toggleEdit;
-    updateEditedBlog();
-  }
+//   }
+//   else{
+//     console.log("Currently Save");
+//     var bEdit = document.getElementById('editPost');
+//     bEdit.innerHTML = toggleEdit;
+//     updateEditedBlog();
+//   }
 
-}
+// }
 
-function enableEditableText(){
+// function enableEditableText(){
 
-  //Div element
-  var getDiv = document.getElementById('blogBody');
-  var getBlogContent = getDiv.innerText;
-  getDiv.style.display="none";
+//   //Div element
+//   var getDiv = document.getElementById('blogBody');
+//   var getBlogContent = getDiv.innerText;
+//   getDiv.style.display="none";
 
-  //Create a input element
-  var editInput = document.getElementById('txtEditedBlog');
-  editInput.style.display="block";
-  editInput.innerText=getBlogContent;
+//   //Create a input element
+//   var editInput = document.getElementById('txtEditedBlog');
+//   editInput.style.display="block";
+//   editInput.innerText=getBlogContent;
   
-  //Update the Div element
-}
+//   //Update the Div element
+// }
 
-function updateEditedBlog(){
-  var editInput = document.getElementById('txtEditedBlog');
+// function updateEditedBlog(){
+//   var editInput = document.getElementById('txtEditedBlog');
 
-  var textEdited = (editInput.innerHTML).toString();
-  var getDiv = document.getElementById('blogBody');
-  getDiv.innerHTML=textEdited;
-  getDiv.style.display="block";
-  editInput.style.display="none";
+//   var textEdited = (editInput.innerHTML).toString();
+//   var getDiv = document.getElementById('blogBody');
+//   getDiv.innerHTML=textEdited;
+//   getDiv.style.display="block";
+//   editInput.style.display="none";
 
   
+// }
+
+function editPost(){
+  document.getElementById('blogBody').contentEditable='true';
+  document.getElementById('blogTitleNew').contentEditable='true';
+  document.getElementById('blogBody').style.border="2px solid pink";
+  document.getElementById('blogTitleNew').style.border="2px solid pink";
+  document.getElementById('edtPstBtn').innerHTML="Save <i class='fa fa-save'></i>";
+  document.getElementById('edtPstBtn').addEventListener("click", saveChanges);
 }
+
+
+function saveChanges(){
+  document.getElementById('blogBody').contentEditable='false';
+  document.getElementById('blogTitleNew').contentEditable='false';
+  document.getElementById('blogBody').style.border="none";
+  document.getElementById('blogTitleNew').style.border="none"; 
+  document.getElementById('edtPstBtn').innerHTML="Edit <i class='fa fa-edit'></i>"; 
+  document.getElementById('edtPstBtn').addEventListener("click", editPost);
+}
+  
+
 function addComment(){
 
   console.log("Inside add comment");
